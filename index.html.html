@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Qystral Technologies - Cloud, DevOps, AI, Software Development and Digital Transformation">
+<meta name="keywords" content="Cloud, DevOps, AWS, Azure, AI, Software Development, Qystral Technologies">
+<meta name="author" content="Qystral Technologies">
+
+<title>Qystral Technologies | Empowering Digital Innovation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+.popup-overlay{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.75);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:9999;
+
+}
+
+
+
+.popup-overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+
+.popup-box{
+
+    width:90%;
+
+    max-width:450px;
+
+    background:#101b2d;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    border:1px solid #00d4ff;
+
+    box-shadow:0 0 40px rgba(0,212,255,.4);
+
+    animation:popupScale .4s ease;
+
+}
+
+
+
+.popup-icon{
+
+    width:60px;
+
+    height:60px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#00d4ff;
+
+    color:#07111f;
+
+    font-size:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:bold;
+
+}
+
+
+
+.popup-box h3{
+
+    margin:20px 0;
+
+    font-size:28px;
+
+}
+
+
+
+.popup-box p{
+
+    color:#ddd;
+
+    margin:10px 0;
+
+}
+
+
+
+.popup-box strong{
+
+    color:#00d4ff;
+
+}
+
+
+
+@keyframes popupScale{
+
+from{
+
+transform:scale(.7);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+
+/* Contact Section 30/70 Layout */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:40% 60%;
+    gap:35px;
+    align-items:stretch;
+}
+
+
+.contact-grid .card{
+    height:100%;
+}
+
+
+/* Form Styling */
+
+.contact-grid input,
+
+.contact-grid textarea{
+    background:#ffffff;
+    color:#111;
+    font-size:15px;
+}
+
+
+.contact-grid input::placeholder,
+.contact-grid textarea::placeholder{
+    color:#777;
+}
+
+.contact-grid .card:last-child{
+    margin-right:30px;
+}
+
+.contact-grid textarea{
+    resize:none;
+}
+
+
+/* Tablet and Mobile */
+
+@media(max-width:900px){
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+.footer-logo{
+    display:flex;
+    justify-content:center;F
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.footer-logo .logo-mark{
+    width:55px;
+    height:55px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#00d4ff,#7c5cff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:32px;
+    font-weight:800;
+    box-shadow:0 0 30px rgba(0,212,255,.35);
+}
+
+.footer-logo .logo-text{
+    display:flex;
+    flex-direction:column;
+    text-align:left;
+    line-height:1.1;
+}
+
+.footer-logo .logo-text strong{
+    font-size:28px;
+    font-weight:800;
+    background:linear-gradient(45deg,#00d4ff,#7c5cff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.footer-logo .logo-text small{
+    font-size:12px;
+    letter-spacing:3px;
+    color:#aaa;
+    text-transform:uppercase;
+}
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin:25px 0;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#101b2d;
+    border:1px solid rgba(255,255,255,.1);
+    transition:.3s;
+}
+
+.social-icons svg{
+    width:22px;
+    height:22px;
+    fill:#fff;
+}
+
+.social-icons a:hover{
+    background:#00d4ff;
+    transform:translateY(-5px);
+}
+
+.social-icons a:hover svg{
+    fill:#07111f;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#07111f;
+color:#fff;
+line-height:1.6;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:white;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+.container{
+width:96%;
+max-width:auto;
+margin:auto;
+}
+
+/* Navigation */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:999;
+background:rgba(8,18,35,.85);
+backdrop-filter:blur(15px);
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-mark{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#00d4ff,#7c5cff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    font-weight:800;
+    color:white;
+    box-shadow:0 0 25px rgba(0,212,255,.4);
+}
+
+.logo-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.1;
+}
+
+.logo-text strong{
+    font-size:24px;
+    font-weight:800;
+    background:linear-gradient(45deg,#00d4ff,#7c5cff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.logo-text small{
+    font-size:11px;
+    letter-spacing:3px;
+    color:#aaa;
+    text-transform:uppercase;
+}
+
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+    margin-right:40px;
+}
+
+
+.nav-links a{
+
+    position:relative;
+    padding:10px 18px;
+    font-weight:500;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50px;
+
+    transition:all .35s ease;
+
+}
+
+
+
+/* Hover Effect */
+
+.nav-links a:hover{
+
+    background:rgba(0,212,255,.15);
+
+    color:#00d4ff;
+
+}
+
+
+
+/* Active Circle Button */
+
+.nav-links a.active{
+
+    background:#00d4ff;
+
+    color:#07111f;
+
+    border-radius:50px;
+
+    padding:10px 22px;
+
+    box-shadow:
+    0 0 20px rgba(0,212,255,.6);
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* Click Animation */
+
+.nav-links a:active{
+
+    transform:scale(.85);
+
+}
+
+.nav-links a:hover{
+color:#fff;
+}
+
+/* Active hover - IMPORTANT */
+
+.nav-links a.active:hover{
+
+    background:#00d4ff;
+
+    color:#07111f !important;
+
+    border-radius:50px;
+
+    padding:10px 22px;
+
+    transform:translateY(-3px);
+
+} 
+
+.menu-btn{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* Hero */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+background:
+linear-gradient(rgba(5,10,25,.88),rgba(5,10,25,.92)),
+radial-gradient(circle at top right,#004cff55,transparent 45%),
+radial-gradient(circle at bottom left,#00d4ff22,transparent 50%);
+}
+
+.hero-content{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:60px;
+align-items:center;
+}
+
+.hero h1{
+font-size:58px;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero h1 span{
+color:#00d4ff;
+}
+
+.hero p{
+font-size:18px;
+color:#d5d5d5;
+margin-bottom:35px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 35px;
+border-radius:50px;
+display:inline-block;
+transition:.35s;
+font-weight:600;
+}
+
+.primary{
+background:#00d4ff;
+color:#06111d;
+}
+
+.primary:hover{
+transform:translateY(-5px);
+}
+
+.secondary{
+border:2px solid #00d4ff;
+}
+
+.secondary:hover{
+background:#00d4ff;
+color:#06111d;
+}
+
+.hero-card{
+background:rgba(255,255,255,.06);
+padding:40px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+}
+
+.hero-card h3{
+margin-bottom:20px;
+}
+
+.hero-card ul{
+list-style:none;
+}
+
+.hero-card li{
+padding:10px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* Generic Sections */
+
+section{
+padding:100px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.section-title p{
+color:#bbb;
+max-width:700px;
+margin:auto;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:#101b2d;
+padding:30px;
+border-radius:18px;
+transition:.35s;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#00d4ff;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:42px;
+}
+
+.nav-links{
+display:none;
+}
+
+.menu-btn{
+display:block;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+    <div class="logo-mark">
+        <span>Q</span>
+    </div>
+    <div class="logo-text">
+        <strong>Qystral</strong>
+        <small>Technologies</small>
+    </div>
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<div class="menu-btn">☰</div>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div>
+
+<h1>
+Empowering <span>Digital Innovation</span> Through Cloud & Software Solutions
+</h1>
+
+<p>
+
+Qystral Technologies helps businesses modernize infrastructure, build scalable applications, adopt AI, automate operations, and accelerate digital transformation.
+
+</p>
+
+<div class="buttons">
+
+<a href="#services" class="btn primary">
+Our Services
+</a>
+
+<a href="#contact" class="btn secondary">
+Contact Us
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<h3>Our Expertise</h3>
+
+<ul>
+
+<li>☁ Cloud Solutions</li>
+
+<li>⚙ DevOps Automation</li>
+
+<li>🤖 Artificial Intelligence</li>
+
+<li>💻 Custom Software Development</li>
+
+<li>🔒 Cybersecurity</li>
+
+<li>📊 Data Analytics</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== PART 2 CONTINUES HERE ===== -->
+<!-- ABOUT SECTION -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>About Qystral Technologies</h2>
+
+<p>
+Building intelligent, scalable and secure technology solutions that help businesses grow in the digital era.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>🚀 Innovation Driven</h3>
+
+<p>
+We combine emerging technologies with practical business strategies to create solutions that deliver measurable results.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🌐 Digital Transformation</h3>
+
+<p>
+From cloud migration to automation, we help organisations modernise their technology ecosystem.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🤝 Customer Focus</h3>
+
+<p>
+Our approach is built around understanding business challenges and delivering reliable long-term partnerships.
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- SERVICES SECTION -->
+
+<section id="services">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>Our Services</h2>
+
+<p>
+Comprehensive technology solutions designed for modern businesses.
+</p>
+
+</div>
+
+
+
+<div class="grid">
+
+
+
+<div class="card">
+
+<h3>☁ Cloud Solutions</h3>
+
+<p>
+Design, migration and management of secure cloud environments using modern cloud platforms.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>⚙ DevOps Engineering</h3>
+
+<p>
+CI/CD automation, infrastructure management, monitoring and deployment optimisation.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>💻 Software Development</h3>
+
+<p>
+Custom web applications, enterprise software and scalable digital platforms.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🤖 AI & Automation</h3>
+
+<p>
+Intelligent automation solutions using artificial intelligence and machine learning.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🔐 Cybersecurity</h3>
+
+<p>
+Security assessment, protection strategies and best practices to safeguard your systems.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>📊 Data Analytics</h3>
+
+<p>
+Transform business data into actionable insights through analytics and reporting.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- TECHNOLOGIES SECTION -->
+
+
+<section>
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>Technologies We Work With</h2>
+
+<p>
+Modern tools and platforms powering our solutions.
+</p>
+
+</div>
+
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>☁ Cloud Platforms</h3>
+
+<p>
+AWS • Microsoft Azure • Google Cloud • Kubernetes
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🛠 Development</h3>
+
+<p>
+JavaScript • React • Node.js • Python • .NET
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🔧 DevOps Tools</h3>
+
+<p>
+Docker • Terraform • Jenkins • GitHub Actions
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🧠 AI Technologies</h3>
+
+<p>
+Machine Learning • Generative AI • Data Engineering
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- COMPANY STATS -->
+
+
+<section>
+
+
+<div class="container">
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h2>99%</h2>
+
+<p>
+System Reliability Focus
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>24/7</h2>
+
+<p>
+Technology Support
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>100+</h2>
+
+<p>
+Digital Solutions Delivered
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>10+</h2>
+
+<p>
+Technology Expertise Areas
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- ===== PART 3 CONTINUES HERE ===== -->
+<!-- WHY CHOOSE US -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Why Choose Qystral Technologies?</h2>
+
+<p>
+A technology partner focused on innovation, reliability and business growth.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>🏆 Industry Expertise</h3>
+
+<p>
+Our team combines technical knowledge with business understanding to deliver solutions aligned with your goals.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🚀 Scalable Solutions</h3>
+
+<p>
+We design systems that grow with your business, from startups to enterprise environments.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🔒 Security First Approach</h3>
+
+<p>
+Security and reliability are embedded into every solution we deliver.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>💡 Continuous Innovation</h3>
+
+<p>
+We continuously explore new technologies to keep businesses ahead of competitors.
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- PORTFOLIO SECTION -->
+
+
+<section id="portfolio">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>Our Projects</h2>
+
+<p>
+Examples of solutions we create for modern organisations.
+</p>
+
+</div>
+
+
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>☁ Cloud Migration Platform</h3>
+
+<p>
+Modernised legacy infrastructure into a secure cloud architecture with improved scalability and performance.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🏢 Enterprise Application</h3>
+
+<p>
+Designed and developed custom business applications to improve operational efficiency.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🤖 AI Automation System</h3>
+
+<p>
+Implemented intelligent automation workflows reducing manual processes and improving productivity.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>📊 Analytics Dashboard</h3>
+
+<p>
+Created real-time dashboards helping businesses make data-driven decisions.
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- TESTIMONIALS -->
+
+
+<section>
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>Client Testimonials</h2>
+
+<p>
+Trusted by organisations looking for reliable technology solutions.
+</p>
+
+</div>
+
+
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<p>
+"Qystral Technologies transformed our digital infrastructure and helped us achieve better performance and reliability."
+</p>
+
+<br>
+
+<h4>
+— Technology Director
+</h4>
+
+</div>
+
+
+
+
+<div class="card">
+
+<p>
+"The team's expertise in cloud and automation helped us accelerate our business operations."
+</p>
+
+<br>
+
+<h4>
+— Business Owner
+</h4>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<p>
+"Professional, innovative and highly responsive. A great technology partner."
+</p>
+
+<br>
+
+<h4>
+— Project Manager
+</h4>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- FAQ SECTION -->
+
+
+<section>
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>Frequently Asked Questions</h2>
+
+<p>
+Common questions about our services.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>What industries do you support?</h3>
+
+<p>
+We support businesses across technology, finance, healthcare, retail, education and professional services.
+</p>
+
+
+<br>
+
+
+<h3>Can you support existing systems?</h3>
+
+<p>
+Yes. We help organisations improve, maintain and modernise existing technology environments.
+</p>
+
+
+<br>
+
+
+<h3>Do you provide ongoing support?</h3>
+
+<p>
+Yes. We offer managed services, monitoring and technical support solutions.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- ===== PART 4 CONTINUES HERE ===== -->
+<!-- CONTACT SECTION -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Contact Us</h2>
+
+<p>
+Let's discuss how Qystral Technologies can help transform your business.
+</p>
+
+</div>
+
+
+
+<div class="contact-grid">
+
+
+<div class="card">
+
+<h3>Get In Touch</h3>
+
+<p>
+📍 Nepal & Global Technology Services
+</p>
+
+<p>
+📧 qystraltechnologies@gmail.com
+</p>
+
+<p>
+☎ +977 9766520585
+</p>
+
+
+<p>
+We are ready to help you build secure, scalable and innovative technology solutions.
+</p>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<form>
+
+
+<input type="text" placeholder="Your Name" required
+style="width:100%;padding:15px;margin-bottom:15px;border-radius:10px;border:none;">
+
+
+<input type="email" placeholder="Email Address" required
+style="width:100%;padding:15px;margin-bottom:15px;border-radius:10px;border:none;">
+
+
+<input type="text" placeholder="Company Name"
+style="width:100%;padding:15px;margin-bottom:15px;border-radius:10px;border:none;">
+
+
+
+<textarea placeholder="Your Message"
+style="width:100%;height:120px;padding:15px;margin-bottom:15px;border-radius:10px;border:none;"></textarea>
+
+
+
+<button class="btn primary" type="submit">
+Send Message
+</button>
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- FOOTER -->
+
+
+<footer style="background:#030914;padding:50px 0;text-align:center;">
+
+
+<div class="container">
+
+<div class="footer-logo">
+
+    <div class="logo-mark">
+        Q
+    </div>
+
+    <div class="logo-text">
+        <strong>Qystral</strong>
+        <small>Technologies</small>
+    </div>
+
+</div>
+
+
+<p style="margin:20px 0;color:#aaa;">
+Cloud • DevOps • AI • Software Development • Digital Transformation
+</p>
+
+
+<div class="social-icons">
+
+<a href="#" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24">
+        <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19ZM8 10H5V19H8V10ZM6.5 5.5A1.75 1.75 0 1 0 6.5 9A1.75 1.75 0 0 0 6.5 5.5ZM19 13.5C19 10.8 17.5 9.5 15.5 9.5C14.4 9.5 13.5 10.1 13 10.8V10H10V19H13V14.5C13 13.3 13.7 12.5 14.8 12.5C15.9 12.5 16 13.4 16 14.6V19H19V13.5Z"/>
+    </svg>
+</a>
+
+
+<a href="#" aria-label="Twitter/X">
+    <svg viewBox="0 0 24 24">
+        <path d="M18.244 2H21.5L14.39 10.12L22.75 22H16.2L11.07 14.9L4.96 22H1.7L9.3 13.32L1.3 2H8.02L12.65 8.5L18.244 2ZM17.1 20H18.9L6.8 4H4.9L17.1 20Z"/>
+    </svg>
+</a>
+
+
+<a href="#" aria-label="Facebook">
+    <svg viewBox="0 0 24 24">
+        <path d="M13.5 22V13.5H16.5L17 10H13.5V8C13.5 7 14 6.5 15.2 6.5H17V3.2C16.7 3.15 15.7 3 14.5 3C12 3 10.3 4.5 10.3 7.2V10H7.5V13.5H10.3V22H13.5Z"/>
+    </svg>
+</a>
+
+</div>
+
+
+
+<p style="color:#777;">
+© 2026 Qystral Technologies. All Rights Reserved.
+</p>
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+
+
+<!-- JAVASCRIPT -->
+
+
+<script>
+
+
+// Mobile Navigation
+
+const menuBtn=document.querySelector(".menu-btn");
+
+const navLinks=document.querySelector(".nav-links");
+
+
+menuBtn.addEventListener("click",()=>{
+
+
+if(navLinks.style.display==="flex"){
+
+navLinks.style.display="none";
+
+}
+
+else{
+
+navLinks.style.display="flex";
+
+navLinks.style.flexDirection="column";
+
+navLinks.style.position="absolute";
+
+navLinks.style.top="80px";
+
+navLinks.style.right="5%";
+
+navLinks.style.background="#101b2d";
+
+navLinks.style.padding="25px";
+
+navLinks.style.borderRadius="15px";
+
+}
+
+
+});
+
+
+
+
+
+// Close menu after clicking link
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+
+link.addEventListener("click",()=>{
+
+
+if(window.innerWidth<900){
+
+navLinks.style.display="none";
+
+}
+
+
+});
+
+
+});
+
+
+
+
+
+
+
+// Scroll Animation
+
+const cards=document.querySelectorAll(".card");
+
+
+const observer=new IntersectionObserver(entries=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
+
+
+}
+
+
+});
+
+
+},{
+
+threshold:.15
+
+});
+
+
+
+cards.forEach(card=>{
+
+
+card.style.opacity="0";
+
+card.style.transform="translateY(40px)";
+
+card.style.transition="all .7s ease";
+
+
+observer.observe(card);
+
+
+});
+
+
+
+
+
+
+// Contact Form Demo
+
+
+document.querySelector("form").addEventListener("submit",function(e){
+
+
+e.preventDefault();
+
+
+const popup = document.getElementById("successPopup");
+
+popup.classList.add("show");
+
+this.reset();
+
+
+});
+
+// Premium Header Menu Animation
+
+const menuItems = document.querySelectorAll(".nav-links a");
+
+
+menuItems.forEach(item=>{
+
+
+    item.addEventListener("click",function(){
+
+
+        menuItems.forEach(link=>{
+
+            link.classList.remove("active");
+
+        });
+
+
+        this.classList.add("active");
+
+
+    });
+
+
+});
+
+function closePopup(){
+
+    document.getElementById("successPopup")
+    .classList.remove("show");
+
+}
+
+</script>
+<div id="successPopup" class="popup-overlay">
+
+    <div class="popup-box">
+
+        <div class="popup-icon">
+            ✓
+        </div>
+
+        <h3>
+            Thank You!
+        </h3>
+
+        <p>
+            <strong>Thanks for contacting Qystral Technologies.</strong>
+        </p>
+
+        <p>
+            We have received your message and our team will get back to you soon.
+        </p>
+
+        <button onclick="closePopup()" class="btn primary">
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
